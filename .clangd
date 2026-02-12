@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: 
+    - "-I/home/mojogome/Documentos/emsdk/upstream/emscripten/cache/sysroot/include"
+    - "-I/home/mojogome/Documentos/emsdk/upstream/emscripten/system/include"
