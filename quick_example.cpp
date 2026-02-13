@@ -1,4 +1,6 @@
 #include "raylib.h"
+#include <math.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,20 +10,18 @@
 using namespace emscripten;
 #endif
 
-int counter = 0;
-int setNumiro(int numero) {
-  counter = numero;
-  return numero;
-}
+float counter = 0;
 
-#define PARTICLES_ITERATION(i)                                                 \
+#define PARTICLES_ROW(i)                                                       \
   int i = 0;                                                                   \
-  i < particles_quantity;                                                      \
+  i < particles_rows;                                                          \
   i++
 
-#ifdef __EMSCRIPTEN__
-EMSCRIPTEN_BINDINGS(my_module) { function("setNumiro", &setNumiro); }
-#endif
+#define PARTICLES_COLL(j)                                                      \
+  int j = 0;                                                                   \
+  j < particles_cols;                                                          \
+  j++
+
 // 800, 450,
 int width = 800;
 int height = 450;
@@ -34,68 +34,96 @@ typedef struct Particle {
   Color color;
 } Particle;
 
-int particles_quantity = 8;
+int particles_rows = 8;
+int particles_cols = 4;
 
-Particle *parts = (Particle *)malloc(particles_quantity * sizeof(Particle));
+Particle **parts =
+    (Particle **)malloc(particles_cols * particles_cols * sizeof(Particle *));
 
 float dt = (float)1 / (float)60;
 
-void InitParticles(Particle *particles) {
-  for (PARTICLES_ITERATION(i)) {
-    particles[i].pos.x = 50 + i * 90;
-    particles[i].pos.y = 50;
-    particles[i].radius = 40;
-    particles[i].color = YELLOW;
-    // particles[i].velocityX = 50 + (rand() % 10) * 10;
-    // particles[i].velocityY = 150 + (rand() % 10) * 10;
-    particles[i].velocityX = 50 + (rand() % 10) * counter;
-    particles[i].velocityY = 150 + (rand() % 10) * counter;
-  }
-}
+void InitParticles(Particle **particles) {
+  for (PARTICLES_ROW(i)) {
 
-void DrawParts(Particle *particles) {
-  for (PARTICLES_ITERATION(i)) {
-    DrawCircleV(particles[i].pos, particles[i].radius, particles[i].color);
-    DrawPixelV(particles[i].pos, RED);
-  }
-}
-
-void VelocityControlParticles(Particle *particles) {
-  for (PARTICLES_ITERATION(i)) {
-    if (particles[i].pos.x >= (40 + i * 90) + 10) {
-      particles[i].velocityX *= -1;
-    }
-    if (particles[i].pos.x <= (40 + i * 90) - 10) {
-      particles[i].velocityX *= -1;
-    }
-
-    if (particles[i].pos.y >= 60) {
-      particles[i].velocityY *= -1;
-    }
-    if (particles[i].pos.y <= 40) {
-      particles[i].velocityY *= -1;
+    for (PARTICLES_COLL(j)) {
+      particles[i][j].pos.x = (40 + 20 + i * (40 * 2 + 15));
+      particles[i][j].pos.y = (40 + 20 + j * (40 * 2 + 15));
+      particles[i][j].radius = 40;
+      particles[i][j].color = YELLOW;
+      particles[i][j].velocityX = 150;
+      particles[i][j].velocityY = 50;
     }
   }
 }
 
-void MovimentParticles(Particle *particles) {
-  for (PARTICLES_ITERATION(i)) {
-    particles[i].pos.y = particles[i].pos.y + particles[i].velocityY * dt;
-    particles[i].pos.x = particles[i].pos.x + particles[i].velocityX * dt;
+void DrawParts(Particle **particles) {
+  for (PARTICLES_ROW(i)) {
+    for (PARTICLES_COLL(j)) {
+      DrawCircleV(particles[i][j].pos, particles[i][j].radius,
+                  particles[i][j].color);
+      DrawPixelV(particles[i][j].pos, RED);
+    }
   }
 }
-void UpdateVelocity(Particle *particles) {
-  for (PARTICLES_ITERATION(i)) {
-    particles[i].velocityX = 50 + (rand() % 10) * counter;
-    particles[i].velocityY = 150 + (rand() % 10) * counter;
+
+void VelocityControlParticles(Particle **particles) {
+  for (PARTICLES_ROW(i)) {
+    for (PARTICLES_COLL(j)) {
+      if (particles[i][j].pos.x >= (40 + 20 + i * (40 * 2 + 15) + 10)) {
+        particles[i][j].velocityX *= -1;
+      }
+      if ((particles[i][j].pos.x <= (40 + 20 + i * (40 * 2 + 15) - 10)) &&
+          parts[i][j].velocityX < 0) {
+        particles[i][j].velocityX *= -1;
+      }
+
+      if (particles[i][j].pos.y >= (40 + 20 + j * (40 * 2 + 15) + 10)) {
+        particles[i][j].velocityY *= -1;
+      }
+      if (particles[i][j].pos.y <= (40 + 20 + j * (40 * 2 + 15) - 10) &&
+          parts[i][j].velocityY < 0) {
+        particles[i][j].velocityY *= -1;
+      }
+    }
   }
 }
+
+void MovimentParticles(Particle **particles) {
+  for (PARTICLES_ROW(i)) {
+    for (PARTICLES_COLL(j)) {
+      particles[i][j].pos.x =
+          particles[i][j].pos.x + particles[i][j].velocityX * dt;
+      particles[i][j].pos.y =
+          particles[i][j].pos.y + particles[i][j].velocityY * dt;
+    }
+  }
+}
+
+void UpdateVelocity(Particle **particles, float numero) {
+  for (PARTICLES_ROW(i)) {
+    for (PARTICLES_COLL(j)) {
+      particles[i][j].velocityX =
+          (exp(numero / 5) / 3) * sin((rand() + 3) % 5 + 3.1415 / 2);
+      particles[i][j].velocityY =
+          (exp(numero / 5) / 3) * sin((rand() + 3) % 5 + 3.1415 / 2);
+    }
+  }
+}
+
+int setNumiro(float numero) {
+  UpdateVelocity(parts, numero);
+  counter = numero;
+  return numero;
+}
+#ifdef __EMSCRIPTEN__
+EMSCRIPTEN_BINDINGS(my_module) { function("setNumiro", &setNumiro); }
+#endif
 
 void UpdateDrawFrame() {
-  printf("%d\n", counter);
+  // printf("%d\n", counter);
   BeginDrawing();
   ClearBackground(SKYBLUE);
-  UpdateVelocity(parts);
+  // UpdateVelocity(parts);
   VelocityControlParticles(parts);
   MovimentParticles(parts);
   DrawParts(parts);
@@ -104,6 +132,9 @@ void UpdateDrawFrame() {
 }
 
 int main() {
+  for (PARTICLES_ROW(i)) {
+    parts[i] = (Particle *)malloc(particles_cols * sizeof(Particle));
+  }
 
   srand(time(NULL));
   InitParticles(parts);

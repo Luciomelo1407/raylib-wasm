@@ -10559,49 +10559,49 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var ASM_CONSTS = {
-  94637: () => { if (document.fullscreenElement) return 1; },  
- 94683: () => { return Module.canvas.width; },  
- 94715: () => { return parseInt(Module.canvas.style.width); },  
- 94763: () => { document.exitFullscreen(); },  
- 94790: () => { setTimeout(function(){ Module.requestFullscreen(false, false); }, 100); },  
- 94862: () => { if (document.fullscreenElement) return 1; },  
- 94908: () => { return Module.canvas.width; },  
- 94940: () => { return screen.width; },  
- 94965: () => { document.exitFullscreen(); },  
- 94992: ($0) => { const canvasId = UTF8ToString($0); setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { document.querySelector(canvasId).style.width="unset"; }, 100); }, 100); },  
- 95186: () => { return window.innerWidth; },  
- 95212: () => { return window.innerHeight; },  
- 95239: () => { if (document.fullscreenElement) return 1; },  
- 95285: () => { return Module.canvas.width; },  
- 95317: () => { return parseInt(Module.canvas.style.width); },  
- 95365: () => { if (document.fullscreenElement) return 1; },  
- 95411: () => { return Module.canvas.width; },  
- 95443: () => { return screen.width; },  
- 95468: () => { return window.innerWidth; },  
- 95494: () => { return window.innerHeight; },  
- 95521: () => { if (document.fullscreenElement) return 1; },  
- 95567: () => { return Module.canvas.width; },  
- 95599: () => { return screen.width; },  
- 95624: () => { document.exitFullscreen(); },  
- 95651: () => { if (document.fullscreenElement) return 1; },  
- 95697: () => { return Module.canvas.width; },  
- 95729: () => { return parseInt(Module.canvas.style.width); },  
- 95777: () => { document.exitFullscreen(); },  
- 95804: ($0) => { Module.canvas.style.opacity = $0; },  
- 95842: () => { return screen.width; },  
- 95867: () => { return screen.height; },  
- 95893: () => { return window.screenX; },  
- 95920: () => { return window.screenY; },  
- 95947: () => { return window.devicePixelRatio; },  
- 95983: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
- 96036: ($0) => { Module.canvas.style.cursor = UTF8ToString($0); },  
- 96087: () => { Module.canvas.style.cursor = 'none'; },  
- 96124: ($0, $1, $2, $3) => { try { navigator.getGamepads()[$0].vibrationActuator.playEffect('dual-rumble', { startDelay: 0, duration: $3, weakMagnitude: $1, strongMagnitude: $2 }); } catch (e) { try { navigator.getGamepads()[$0].hapticActuators[0].pulse($2, $3); } catch (e) { } } },  
- 96380: ($0) => { Module.canvas.style.cursor = UTF8ToString($0); },  
- 96431: () => { if (document.pointerLockElement) return 1; },  
- 96478: () => { if (document.fullscreenElement) return 1; },  
- 96524: () => { return window.innerWidth; },  
- 96550: () => { return window.innerHeight; }
+  94957: () => { if (document.fullscreenElement) return 1; },  
+ 95003: () => { return Module.canvas.width; },  
+ 95035: () => { return parseInt(Module.canvas.style.width); },  
+ 95083: () => { document.exitFullscreen(); },  
+ 95110: () => { setTimeout(function(){ Module.requestFullscreen(false, false); }, 100); },  
+ 95182: () => { if (document.fullscreenElement) return 1; },  
+ 95228: () => { return Module.canvas.width; },  
+ 95260: () => { return screen.width; },  
+ 95285: () => { document.exitFullscreen(); },  
+ 95312: ($0) => { const canvasId = UTF8ToString($0); setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { document.querySelector(canvasId).style.width="unset"; }, 100); }, 100); },  
+ 95506: () => { return window.innerWidth; },  
+ 95532: () => { return window.innerHeight; },  
+ 95559: () => { if (document.fullscreenElement) return 1; },  
+ 95605: () => { return Module.canvas.width; },  
+ 95637: () => { return parseInt(Module.canvas.style.width); },  
+ 95685: () => { if (document.fullscreenElement) return 1; },  
+ 95731: () => { return Module.canvas.width; },  
+ 95763: () => { return screen.width; },  
+ 95788: () => { return window.innerWidth; },  
+ 95814: () => { return window.innerHeight; },  
+ 95841: () => { if (document.fullscreenElement) return 1; },  
+ 95887: () => { return Module.canvas.width; },  
+ 95919: () => { return screen.width; },  
+ 95944: () => { document.exitFullscreen(); },  
+ 95971: () => { if (document.fullscreenElement) return 1; },  
+ 96017: () => { return Module.canvas.width; },  
+ 96049: () => { return parseInt(Module.canvas.style.width); },  
+ 96097: () => { document.exitFullscreen(); },  
+ 96124: ($0) => { Module.canvas.style.opacity = $0; },  
+ 96162: () => { return screen.width; },  
+ 96187: () => { return screen.height; },  
+ 96213: () => { return window.screenX; },  
+ 96240: () => { return window.screenY; },  
+ 96267: () => { return window.devicePixelRatio; },  
+ 96303: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
+ 96356: ($0) => { Module.canvas.style.cursor = UTF8ToString($0); },  
+ 96407: () => { Module.canvas.style.cursor = 'none'; },  
+ 96444: ($0, $1, $2, $3) => { try { navigator.getGamepads()[$0].vibrationActuator.playEffect('dual-rumble', { startDelay: 0, duration: $3, weakMagnitude: $1, strongMagnitude: $2 }); } catch (e) { try { navigator.getGamepads()[$0].hapticActuators[0].pulse($2, $3); } catch (e) { } } },  
+ 96700: ($0) => { Module.canvas.style.cursor = UTF8ToString($0); },  
+ 96751: () => { if (document.pointerLockElement) return 1; },  
+ 96798: () => { if (document.fullscreenElement) return 1; },  
+ 96844: () => { return window.innerWidth; },  
+ 96870: () => { return window.innerHeight; }
 };
 function SetCanvasIdJs(out,outSize) { var canvasId = "#" + Module.canvas.id; stringToUTF8(canvasId, out, outSize); }
 
@@ -10620,14 +10620,15 @@ var __emscripten_stack_restore = makeInvalidEarlyAccess('__emscripten_stack_rest
 var __emscripten_stack_alloc = makeInvalidEarlyAccess('__emscripten_stack_alloc');
 var _emscripten_stack_get_current = makeInvalidEarlyAccess('_emscripten_stack_get_current');
 var dynCall_v = makeInvalidEarlyAccess('dynCall_v');
-var dynCall_ii = makeInvalidEarlyAccess('dynCall_ii');
-var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii');
+var dynCall_if = makeInvalidEarlyAccess('dynCall_if');
+var dynCall_iif = makeInvalidEarlyAccess('dynCall_iif');
 var dynCall_vii = makeInvalidEarlyAccess('dynCall_vii');
 var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii');
 var dynCall_viff = makeInvalidEarlyAccess('dynCall_viff');
 var dynCall_viiiii = makeInvalidEarlyAccess('dynCall_viiiii');
 var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii');
 var dynCall_vidd = makeInvalidEarlyAccess('dynCall_vidd');
+var dynCall_ii = makeInvalidEarlyAccess('dynCall_ii');
 var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii');
 var dynCall_vi = makeInvalidEarlyAccess('dynCall_vi');
 var dynCall_vffff = makeInvalidEarlyAccess('dynCall_vffff');
@@ -10637,6 +10638,7 @@ var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii');
 var dynCall_i = makeInvalidEarlyAccess('dynCall_i');
 var dynCall_vff = makeInvalidEarlyAccess('dynCall_vff');
 var dynCall_viiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiii');
+var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii');
 var dynCall_vfi = makeInvalidEarlyAccess('dynCall_vfi');
 var dynCall_viif = makeInvalidEarlyAccess('dynCall_viif');
 var dynCall_vif = makeInvalidEarlyAccess('dynCall_vif');
@@ -10669,14 +10671,15 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['_emscripten_stack_alloc'] != 'undefined', 'missing Wasm export: _emscripten_stack_alloc');
   assert(typeof wasmExports['emscripten_stack_get_current'] != 'undefined', 'missing Wasm export: emscripten_stack_get_current');
   assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v');
-  assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii');
-  assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii');
+  assert(typeof wasmExports['dynCall_if'] != 'undefined', 'missing Wasm export: dynCall_if');
+  assert(typeof wasmExports['dynCall_iif'] != 'undefined', 'missing Wasm export: dynCall_iif');
   assert(typeof wasmExports['dynCall_vii'] != 'undefined', 'missing Wasm export: dynCall_vii');
   assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii');
   assert(typeof wasmExports['dynCall_viff'] != 'undefined', 'missing Wasm export: dynCall_viff');
   assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii');
   assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii');
   assert(typeof wasmExports['dynCall_vidd'] != 'undefined', 'missing Wasm export: dynCall_vidd');
+  assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii');
   assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii');
   assert(typeof wasmExports['dynCall_vi'] != 'undefined', 'missing Wasm export: dynCall_vi');
   assert(typeof wasmExports['dynCall_vffff'] != 'undefined', 'missing Wasm export: dynCall_vffff');
@@ -10686,6 +10689,7 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i');
   assert(typeof wasmExports['dynCall_vff'] != 'undefined', 'missing Wasm export: dynCall_vff');
   assert(typeof wasmExports['dynCall_viiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiii');
+  assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii');
   assert(typeof wasmExports['dynCall_vfi'] != 'undefined', 'missing Wasm export: dynCall_vfi');
   assert(typeof wasmExports['dynCall_viif'] != 'undefined', 'missing Wasm export: dynCall_viif');
   assert(typeof wasmExports['dynCall_vif'] != 'undefined', 'missing Wasm export: dynCall_vif');
@@ -10715,14 +10719,15 @@ function assignWasmExports(wasmExports) {
   __emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc'];
   _emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'];
   dynCall_v = dynCalls['v'] = createExportWrapper('dynCall_v', 1);
-  dynCall_ii = dynCalls['ii'] = createExportWrapper('dynCall_ii', 2);
-  dynCall_iii = dynCalls['iii'] = createExportWrapper('dynCall_iii', 3);
+  dynCall_if = dynCalls['if'] = createExportWrapper('dynCall_if', 2);
+  dynCall_iif = dynCalls['iif'] = createExportWrapper('dynCall_iif', 3);
   dynCall_vii = dynCalls['vii'] = createExportWrapper('dynCall_vii', 3);
   dynCall_viii = dynCalls['viii'] = createExportWrapper('dynCall_viii', 4);
   dynCall_viff = dynCalls['viff'] = createExportWrapper('dynCall_viff', 4);
   dynCall_viiiii = dynCalls['viiiii'] = createExportWrapper('dynCall_viiiii', 6);
   dynCall_viiii = dynCalls['viiii'] = createExportWrapper('dynCall_viiii', 5);
   dynCall_vidd = dynCalls['vidd'] = createExportWrapper('dynCall_vidd', 4);
+  dynCall_ii = dynCalls['ii'] = createExportWrapper('dynCall_ii', 2);
   dynCall_iiii = dynCalls['iiii'] = createExportWrapper('dynCall_iiii', 4);
   dynCall_vi = dynCalls['vi'] = createExportWrapper('dynCall_vi', 2);
   dynCall_vffff = dynCalls['vffff'] = createExportWrapper('dynCall_vffff', 5);
@@ -10732,6 +10737,7 @@ function assignWasmExports(wasmExports) {
   dynCall_i = dynCalls['i'] = createExportWrapper('dynCall_i', 1);
   dynCall_vff = dynCalls['vff'] = createExportWrapper('dynCall_vff', 3);
   dynCall_viiiiiii = dynCalls['viiiiiii'] = createExportWrapper('dynCall_viiiiiii', 8);
+  dynCall_iii = dynCalls['iii'] = createExportWrapper('dynCall_iii', 3);
   dynCall_vfi = dynCalls['vfi'] = createExportWrapper('dynCall_vfi', 3);
   dynCall_viif = dynCalls['viif'] = createExportWrapper('dynCall_viif', 4);
   dynCall_vif = dynCalls['vif'] = createExportWrapper('dynCall_vif', 3);
