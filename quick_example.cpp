@@ -69,7 +69,8 @@ void DrawParts(Particle **particles) {
 void VelocityControlParticles(Particle **particles) {
   for (PARTICLES_ROW(i)) {
     for (PARTICLES_COLL(j)) {
-      if (particles[i][j].pos.x >= (40 + 20 + i * (40 * 2 + 15) + 10)) {
+      if (particles[i][j].pos.x >= (40 + 20 + i * (40 * 2 + 15) + 10) &&
+          parts[i][j].velocityX > 0) {
         particles[i][j].velocityX *= -1;
       }
       if ((particles[i][j].pos.x <= (40 + 20 + i * (40 * 2 + 15) - 10)) &&
@@ -77,7 +78,8 @@ void VelocityControlParticles(Particle **particles) {
         particles[i][j].velocityX *= -1;
       }
 
-      if (particles[i][j].pos.y >= (40 + 20 + j * (40 * 2 + 15) + 10)) {
+      if (particles[i][j].pos.y >= (40 + 20 + j * (40 * 2 + 15) + 10) &&
+          parts[i][j].velocityY > 0) {
         particles[i][j].velocityY *= -1;
       }
       if (particles[i][j].pos.y <= (40 + 20 + j * (40 * 2 + 15) - 10) &&
@@ -103,9 +105,9 @@ void UpdateVelocity(Particle **particles, float numero) {
   for (PARTICLES_ROW(i)) {
     for (PARTICLES_COLL(j)) {
       particles[i][j].velocityX =
-          (exp(numero / 5) / 3) * sin((rand() + 3) % 5 + 3.1415 / 2);
+          (exp(numero / 6) / 3) * sin((rand() + 3) % 5 + 3.1415 / 2);
       particles[i][j].velocityY =
-          (exp(numero / 5) / 3) * sin((rand() + 3) % 5 + 3.1415 / 2);
+          (exp(numero / 5) / 4) * sin((rand() + 3) % 5 + 3.1415 / 2);
     }
   }
 }
@@ -139,7 +141,7 @@ int main() {
   srand(time(NULL));
   InitParticles(parts);
   InitWindow(800, 450, "Particles Simulator - Raylib");
-  SetTargetFPS(100);
+  SetTargetFPS(60);
 
 #ifdef __EMSCRIPTEN__
   emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
