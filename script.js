@@ -361,7 +361,7 @@ export function connectWebSocket(instance) {
 
       if (!reconnectInterval) {
         reconnectInterval = setInterval(() => {
-          connectWebSocket();
+          connectWebSocket(instance);
         }, 3000);
       }
     };
@@ -401,7 +401,7 @@ const instance = await RaylibModuleFactory({
   // Opcional: capturar prints do C (printf) no console do JS
   print: (text) => console.log(`[Raylib]: ${text}`),
 });
-
+instance.setNumiro(10);
 // ========== INICIALIZAÇÃO ==========
 connectWebSocket(instance);
 
