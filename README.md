@@ -36,4 +36,18 @@ Para abrir o projeto web basta iniciar um servidor web python na pasta frontend:
 python -m http.server PORT
 ```
 
+lembre-se de ajustar o ip do seu esp32 no arquivo frontend/scripts/script.js:
+
+```java script
+// ========== CONFIGURAÇÃO ==========
+const ESP32_IP = "localhost:8081"; // <<< CONFIGURE SEU IP AQUI
+const MAX_DATA_POINTS = 50;
+const MAX_HISTORY_RECORDS = 100; // Máximo de registros históricos para CSV
+const R_REF = 10000; // 10kΩ
+const B_COEFFICIENT = 3950; // Beta do NTC
+const T0 = 298.15; // 25°C em Kelvin
+const VCC = 3.3;
+// ========
+```
+
 Caso queira alterar algo no simulador de partículas recomendo seguir a dpcumentação do raylib, https://github.com/raysan5/raylib e do emscriptem, [https://emscripten.org/docs/index.html](https://emscripten.org/docs/index.html), o arquivo run em frontend/scrits pode te ajudar.
