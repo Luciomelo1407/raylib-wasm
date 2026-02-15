@@ -16,7 +16,7 @@ wss.on("connection", (ws) => {
         humidity: parseFloat((Math.random() * 20 + 40).toFixed(2)), // 40-60%
         temperature: parseFloat((Math.random() * 5 + 25).toFixed(2)), // 25-30°C
         termistor: Math.floor(Math.random() * 1024), // 0-1023 (ADC)
-        termistor_temperature: 36.5, // 20-30°C
+        termistor_temperature: parseFloat((Math.random() * 5 + 25).toFixed(2)), // 25-30°C
         resistence: Math.floor(Math.random() * 5000 + 1000), // 1k-6k ohms
       };
 
