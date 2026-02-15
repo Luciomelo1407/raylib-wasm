@@ -1,5 +1,15 @@
 # Projeto Logger
 <img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/WhatsApp%20Image%202026-02-10%20at%2022.28.32(4).jpeg?raw=true">
+
+<img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/Captura%20de%20tela%20de%202026-02-15%2013-49-30.png?raw=true">
+<img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/Captura%20de%20tela%20de%202026-02-15%2013-49-42.png?raw=true">
+<img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/Captura%20de%20tela%20de%202026-02-15%2013-49-57.png?raw=true">
+<img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/Captura%20de%20tela%20de%202026-02-15%2013-50-18.png?raw=true">
+<img align="center"  src="https://github.com/Luciomelo1407/raylib-wasm/blob/main/assets/Captura%20de%20tela%20de%202026-02-15%2013-50-27.png?raw=true">
+
+
+
+
 ## Objetivo:
 
 Esse projeto é um sistema de logger para dados de temperatura e pressão, a ideia principal era escrever os dados em um csv, porém, acabou se tranformando em um estudo de como medir temperatura e a demonstração de que a temperatura é nada mais e nada a menos que o grau de aditação das moléculas de certa maneira a “velocidade” a qual as moléculas se movem.
