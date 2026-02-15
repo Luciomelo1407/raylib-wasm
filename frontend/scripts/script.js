@@ -3,7 +3,6 @@ import RaylibModuleFactory from "./quick_example.js";
 // import { initGame } from "./teste";
 
 // ========== CONFIGURAÇÃO ==========
-// const ESP32_IP = "10.229.209.118:80"; // <<< CONFIGURE SEU IP AQUI
 const ESP32_IP = "localhost:8081"; // <<< CONFIGURE SEU IP AQUI
 const MAX_DATA_POINTS = 50;
 const MAX_HISTORY_RECORDS = 100; // Máximo de registros históricos para CSV
